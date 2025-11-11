@@ -132,34 +132,7 @@ Diese Bedingungen werden verundet und der handler wird nur ausgeführt wenn alle
 
 #### Params im handler nutzen
 
-Haben wir beispielsweise eine **GET**-request mit dem Parameter `name=Stefan` können wir diesen in einem handler nutzen, indem wir diesem einen String parameter übergeben und diesen mit `@RequestParam("name")` annotieren.
-
-Wenn dieser String genau so heißt wie der Parameter, kann man `@RequestParam("name")` weglassen.
-
-```java
-@GetMapping()
-ResponseBody
-public String get_index(@RequestParam("name") String myName) {
-    return myName;
-}
-
-@GetMapping()
-ResponseBody
-public String get_index(String name) {
-    return name;
-}
-```
-#### Pfad als Parameter
-
-Auch Teile des Pfades können wir als Parameter übergeben. Diese müssen wir mit `@PathVariable` annotieren und hier können wir das nicht weglassen.
-
-```java
-@GetMapping("/{organization}/{repository}")
-ResponseBody
-public String[] repo(   @PathVariable("organization") String organization,
-                        @PathVariable("repository")   String repository) {
-  return new String[]{organization, repository};
-}
+siehe Woche3 parameter.md
 ```
 
 ### Return types
