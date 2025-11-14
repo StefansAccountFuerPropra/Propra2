@@ -51,16 +51,16 @@ public record Vector(Double x, Double y){
     public Boolean notNull(){
         return (x != null && != null);
     }
-    public Double get_length(){
+    public Double getLength(){
         return Math.sqrt(x*x + y*y);
     }
 }
 
 @GetMapping()
 @ResponseBody
-public String get_index(Vector v) {
+public String getIndex(Vector v) {
     if(v.notNull()){
-        return v.get_length().toString();
+        return v.getLength().toString();
     }
     return "forward:/index";
 }
@@ -78,5 +78,8 @@ public String[] repo(   @PathVariable("organization") String organization,
                         @PathVariable("repository")   String repository) {
   return new String[]{organization, repository};
 }
+```
 
+## veitere Parameter
 
+https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/arguments.html
